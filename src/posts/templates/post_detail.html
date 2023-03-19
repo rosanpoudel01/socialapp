@@ -1,0 +1,22 @@
+
+{% extends 'base_site.html' %}
+
+{% block maincontent %} 
+
+<div class="image-block-inner">
+    
+      {% if form.image %}
+      <img src="{{ form.image.url }}" alt="{{ form.title }}" height="350px" class="img-responsive w-100">
+      {% else %}
+      <img src="https://images.pexels.com/photos/14651941/pexels-photo-14651941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="default image" height="300px" class="img-responsive w-100">
+      
+      {% endif %}
+
+    <!-- <span class="reporter">{{form.reporter}}</span> -->
+
+    <h4 class="mt-3">{{form.description}</a></h4>
+    <!--  <p></p> -->
+   
+  </div><!-- .image-block-inner -->
+{% endblock maincontent %}
+

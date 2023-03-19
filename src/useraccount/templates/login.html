@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>Welcome To KuraKani</center>
+<div class="wrapper">
+    <div class="logologin">
+        {% load static %}
+        <img src="{% static 'images/kk.png' %}" alt="">
+    </div>
+  
+    <form method="post" class="p-3 mt-3">{% csrf_token %}
+        {{ form.non_field_errors }}
+        
+        <div class="form-field d-flex align-items-center">
+            {{ form.username.errors }}
+
+            <span class="far fa-user"></span>
+            {{ form.username }}
+
+            <!-- <input type="text" name="userName" id="userName" placeholder="Username"> -->
+        </div>
+        <div class="form-field d-flex align-items-center">
+            {{ form.password.errors }}
+
+            <span class="fas fa-key"></span>
+            {{ form.password }}
+
+            <!-- <input type="password" name="password" id="pwd" placeholder="Password"> -->
+        </div>
+
+        <button class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+    </div>
+</div>
+
+{% endblock content %}

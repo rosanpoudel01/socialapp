@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+  
+<form method="POST">  {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form%}
+     <div class="form-group my-2">
+        <label> {{field.label_tag}}</label>
+        {{ field }}
+        <span class="text text-danger">{{ field.errors }}</span>
+    
+    </div>
+    {% endfor %}
+    <input type="submit" class="btn btn-primary" value="Sign Up">
+</form>
+<a href="{% url 'user:login' %}">Login</a>
+</center>
+
+{% endblock content %}
